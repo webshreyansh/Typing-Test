@@ -1,0 +1,331 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
+}
+
+.nav {
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid white;
+}
+
+.home-page-text {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 200px;
+  font-size: 1.5rem;
+  ;
+}
+.watermark {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  font-size: 0.9rem;
+  color: #888;
+  opacity: 0.6;
+  pointer-events: none; /* So it doesn't block clicks */
+  user-select: none;
+}
+
+#cursor {
+  display: inline-block;
+  color: #ffffff;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.home-page-timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .timer-select{
+    gap: 15%;
+    width: 300px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.timer-btn{
+    width: 70%;
+    height: 12%;
+    color: #fff;
+    cursor: pointer;
+    background-color:#00f7ff ;
+    border-radius: 30px;
+    border: none;
+}
+
+.timer-btn:hover{
+     width: 100%;
+    height: 12%;
+} */
+
+#timer-select {
+  width: 300px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12%;
+  padding: 20px;
+}
+
+/* Button Base Style */
+.timer-btn {
+  width: 85%;
+  height: 12%;
+  color: #fff;
+  cursor: pointer;
+  background-color: #00f7ff;
+  border-radius: 30px;
+  border: none;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #00f7ff80, 0 0 20px #00f7ff40;
+}
+
+/* Glowing Hover Effect */
+.timer-btn:hover {
+  width: 100%;
+  transform: scale(1.05);
+  box-shadow:
+    0 0 10px #00f7ff,
+    0 0 20px #00f7ff,
+    0 0 40px #00f7ff;
+}
+
+/* Press Effect */
+.timer-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 5px #00f7ff;
+}
+
+/* Animated Gradient Shine */
+.timer-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.4) 100%);
+  transform: skewX(-25deg);
+  transition: left 0.5s ease;
+}
+
+.timer-btn:hover::before {
+  left: 125%;
+}
+
+.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(50px);
+}
+
+.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  animation: fade 0.5s ease-out;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* typing screen */
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+.typing-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 70px;
+}
+
+.timer {
+  width: 300px;
+  height: 100px;
+  color: rgb(110, 110, 110);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.typing-para {
+  width: 50%;
+  height: auto;
+  border: none;
+  color: white;
+}
+
+.typing-screen-buttons button {
+  width: 35px;
+  height: 35px;
+  background-color: #00f7ff;
+  border: none;
+  font-size: x-large;
+  font-weight: 700;
+}
+
+.typing-screen-buttons{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  gap: 20px;
+}
+
+#reset-button {
+  background-color: #e04040;
+  border: none;
+  color: #0d0d0d;
+  font-size: 1.5rem;
+  padding: 2px 4px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#reset-button:hover {
+  background-color: #00ade6;
+  transform: scale(1.05);
+}
+
+#reset-button:active {
+  transform: scale(0.95);
+}
+
+
+.typing-para {
+  font-size: 1.5rem;
+  font-family: monospace;
+  color: #ccc;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.typing-para span.correct {
+  color: #4caf50; /* green */
+}
+
+.typing-para span.incorrect {
+  color: #f44336; /* red */
+}
+
+#hidden-input {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+  border: none;
+}
+
+/* Popup container */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Popup content */
+.popup-content {
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 255, 195, 0.4);
+  color: #ffffff;
+}
+
+.popup-content h2 {
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.popup-content p {
+  font-size: 1.2rem;
+  margin: 8px 0;
+}
+
+.popup-content button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #00ffc3;
+  border: none;
+  border-radius: 8px;
+  color: #0d0d0d;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.popup-content button:hover {
+  background-color: #00ade6;
+}
+
+/* Hide class */
+.hide {
+  display: none;
+}
+

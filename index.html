@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Checker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+            <img src="assets/pngwing.com.png" alt="logo" style="width: 100px; height: 50px;">
+        </div>
+    </div>
+    
+    <section id="home-page" class="screen show">
+
+        <div class="home-page-text">
+            <h2>Typing Tester</h2>
+            <p id="para" style="color: #00ffc3;  margin-top: 20px;"><span id="typed-text">Put your typing skills to the
+                    test — race against the clock!</span><span id="cursor">|</span></p>
+        </div>
+
+        <div class="home-page-timer">
+            <div id="timer-select">
+                <button class="timer-btn" data-time="30">30 Seconds</button>
+                <button class="timer-btn" data-time="60">60 Seconds</button>
+                <button class="timer-btn" data-time="120">120 Seconds</button>
+                <button class="timer-btn" data-time="custom">Customised Timer</button>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="typing-screen screen hide">
+
+        <div class="timer"></div>
+
+
+        <div class="typing-para" id="display-paragraph">
+        </div>
+        <input type="text" id="hidden-input" autocomplete="off" />
+
+
+        <div class="typing-screen-buttons">
+            <button id="reset-button">↻</button>
+            <p style="color: rgb(209, 206, 206); font-size: xx-large;">Error Counter : <span id="error-count">0</span>
+            </p>
+        </div>
+
+        <div id="result-popup" class="popup hide">
+            <div class="popup-content">
+                <h2 id="popup-content-text"></h2>
+                <p id="wpm-result">WPM: 0</p>
+                <p id="char-count">Total Characters: 0</p>
+                <p id="mistakes">Mistakes: 0</p>
+                <button id="close-popup">Close</button>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+<footer class="watermark">© 2025 Shreyansh Sharma</footer>
+
+
+    <script src="paragraphs.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
